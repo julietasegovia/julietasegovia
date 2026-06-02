@@ -1,41 +1,224 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en" class="scroll-smooth">
     <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=yes">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
         <title>Julieta Segovia</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Custom fade-in up animation for smooth entry effects */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .animate-fade-in-up {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+            .animation-delay-200 {
+                animation-delay: 0.2s;
+            }
+            .animation-delay-400 {
+                animation-delay: 0.4s;
+            }
+        </style>
     </head>
-    <header>
-    </header>
-    <body class="bg-gray-900">
-        <div class="flex flex-col justify-start text-start h-screen grid place-items-center">
-            <div class="flex flex-col pl-32">
-                <h4 class="text-pink-300 text-xl pl-2">Hello, I'm</h4>
-                <h1 class="pt-1 text-gray-300 font-semibold text-7xl">Julieta Segovia</h1>
-                <h2 class="pt-3 text-gray-400 font-medium text-5xl">I build websites and apps.</h2>
-                    <p class="text-gray-500 text-xl pt-4">I'm a student specializing in IT. In my free time I like to develop projects.</p>
-                    <p class="text-gray-500 text-xl">I'm currently working an intership at <a class="pl-1 text-pink-400 underline text-xl cursor-pointer hover:text-pink-200" href="https://www.iea.com.ar/">IEA.</a></p>
-                <div class="pt-4 w-1/3">
-                    <button class="text-pink-300 border w-64 border-pink-400 hover:text-gray-900 hover:bg-pink-400">Link to this website</button>
+    <body class="bg-gray-900 font-sans text-gray-300 antialiased overflow-x-hidden">
+        
+        <!-- Sticky Navigation Header -->
+        <header class="sticky top-0 z-50 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
+            <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+                <a href="#" class="text-pink-400 font-mono text-xl font-bold hover:text-pink-300 transition-colors">JS</a>
+                <div class="flex items-center gap-8 font-mono text-sm">
+                    <a href="#about" class="hover:text-pink-300 transition-colors"><span class="text-pink-400">01.</span> About</a>
+                    <a href="#projects" class="hover:text-pink-300 transition-colors"><span class="text-pink-400">02.</span> Projects</a>
                 </div>
-            </div>
-        </div>
-        <div class="flex justify-center text-start grid place-items-center">
-            <div class="flex items-center gap-4">
-                <h2 class="pt-3 text-pink-400 font-medium text-4xl">01</h2>
-                <h2 class="pt-3 text-gray-300 font-medium text-5xl">About Me</h2>
-            </div>
-            <div class="flex justify-center items-center pt-32">
-                <div>
-                    <p class="text-gray-500 text-xl pt-16 w-1/2">Hello, my name is Julieta, and I love to design fun apps and websites!</p>
-                    <p class="text-gray-500 text-xl pt-4 w-1/2">I'm 18, and I'm currently on my senior year of technical high school, soon I'll be a certified IT technician. I'm also doing an intership that's set to last around 200 hours.</p>
-                    <p class="text-gray-500 text-xl pt-4 w-1/2">My goal this year is to gain more experience by completing 1000 hours of code by the end of the year. These are some of the languages I'm familiar with:</p>
+            </nav>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6">
+            
+            <!-- Home Section -->
+            <section class="min-h-[calc(100vh-4rem)] flex flex-col justify-center">
+                <div class="space-y-4 max-w-3xl opacity-0 animate-fade-in-up">
+                    <h4 class="text-pink-300 text-xl pl-1">Hello, I'm</h4>
+                    <h1 class="text-gray-100 font-bold text-5xl md:text-7xl tracking-tight">
+                        Julieta Segovia
+                    </h1>
+                    <h2 class="text-gray-400 font-semibold text-3xl md:text-5xl">
+                        I build websites and apps.
+                    </h2>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-xl pt-2">
+                        I'm a student specializing in IT. In my free time, I like to develop projects.
+                    </p>
+                    <p class="text-gray-400 text-lg md:text-xl">
+                        I'm currently working an internship at 
+                        <a class="text-pink-400 underline decoration-pink-400/30 hover:decoration-pink-400 hover:text-pink-300 transition-all cursor-pointer" href="https://www.iea.com.ar/" target="_blank" rel="noopener noreferrer">IEA.</a>
+                    </p>
+                    <div class="pt-6">
+                        <a href="#projects" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                            Check out my work
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <img src="juli.jpg" class="rotate-90 w-2/5 pt-16 grayscale rounded-xl" alt="A picture of me">
+            </section>
+
+            <!-- 01. About Me Section -->
+            <section id="about" class="py-24 scroll-mt-16">
+                <div class="flex items-center gap-4 mb-12 opacity-0 animate-fade-in-up">
+                    <h2 class="text-pink-400 font-mono text-3xl md:text-4xl">01.</h2>
+                    <h2 class="text-gray-200 font-bold text-3xl md:text-4xl">About Me</h2>
+                    <div class="h-[1px] bg-gray-700 flex-grow max-w-md hidden sm:block"></div>
                 </div>
-            </div>
-        </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                    <div class="md:col-span-2 space-y-4 text-gray-400 text-lg opacity-0 animate-fade-in-up animation-delay-200">
+                        <p>
+                            Hello, my name is Julieta, and I love to design fun apps and websites!
+                        </p>
+                        <p>
+                            I'm 18, and I'm currently in my senior year of technical high school. Soon, I'll be a certified IT technician. I'm also doing an internship that's set to last around 200 hours.
+                        </p>
+                        <p>
+                            My goal this year is to gain more experience by completing 1000 hours of code by the end of the year. Here are some of the languages and frameworks I have been working with recently:
+                        </p>
+                        
+                        <!-- Tech Stack Grid -->
+                        <ul class="grid grid-cols-2 gap-2 font-mono text-sm text-gray-300 pt-4">
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> C / C#</li>
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> JavaScript</li>
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> Haskell</li>
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> HTML/CSS</li>
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> React + Vite</li>
+                            <li class="flex items-center gap-2"><span class="text-pink-400">▹</span> Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Profile Image Wrapper -->
+                    <div class="flex justify-center md:justify-start opacity-0 animate-fade-in-up animation-delay-400">
+                        <div class="relative group max-w-[280px]">
+                            <div class="absolute inset-0 border-2 border-pink-400 rounded-xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
+                            <div class="overflow-hidden rounded-xl bg-pink-400">
+                                <img src="juli.jpg" class="w-full grayscale contrast-125 mix-blend-multiply hover:mix-blend-normal hover:grayscale-0 transition-all duration-300 object-cover aspect-square rotate-90" alt="Julieta Segovia">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. Projects Section -->
+            <section id="projects" class="py-24 scroll-mt-16 border-t border-gray-800">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-pink-400 font-mono text-3xl md:text-4xl">02.</h2>
+                    <h2 class="text-gray-200 font-bold text-3xl md:text-4xl">Some Things I've Built</h2>
+                    <div class="h-[1px] bg-gray-700 flex-grow max-w-md hidden sm:block"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Spotify Clone -->
+                    <div class="bg-gray-800/40 p-6 rounded-xl border border-gray-800 hover:border-pink-500/30 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 group-hover:text-pink-300 transition-colors mb-2">Spotify Clone</h3>
+                            <p class="text-gray-400 text-sm mb-4">A responsive frontend platform designed for music streaming, showcasing custom UI components, responsive carousels, and intricate CSS patterns.</p>
+                        </div>
+                        <div>
+                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+                                <li>React + Vite</li>
+                                <li>Tailwind CSS</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 gap-4 flex">
+                            <a target="_blank" rel="noopener noreferrer" href="https://julietasegovia.github.io/Spotify-Clone/" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Demo
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/julietasegovia/Spotify-Clone" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Chat App -->
+                    <div class="bg-gray-800/40 p-6 rounded-xl border border-gray-800 hover:border-pink-500/30 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 group-hover:text-pink-300 transition-colors mb-2">Live Chat Room</h3>
+                            <p class="text-gray-400 text-sm mb-4">A real-time messaging application built with modern web technologies, featuring usernames, mentions, whispers, and a responsive design.</p>
+                        </div>
+                        <div>
+                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+                                <li>JavaScript</li>
+                                <li>CSS</li>
+                                <li>Socket.IO</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 gap-4 flex">
+                            <a target="_blank" rel="noopener noreferrer" href="https://chat-app-l8we.onrender.com/" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Demo
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/julietasegovia/Chat-App" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CookBook -->
+                    <div class="bg-gray-800/40 p-6 rounded-xl border border-gray-800 hover:border-pink-500/30 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 group-hover:text-pink-300 transition-colors mb-2">Cook Book</h3>
+                            <p class="text-gray-400 text-sm mb-4">A collection of recipes and cooking instructions, organized by ingredients and country of origin.</p>
+                        </div>
+                        <div>
+                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+                                <li>React + Vite</li>
+                                <li>Tailwind CSS</li>
+                                <li>TheMealDB API</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 gap-4 flex">
+                            <a target="_blank" rel="noopener noreferrer" href="https://julietasegovia.github.io/Cook-Book/" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Demo
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/julietasegovia/Cook-Book" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Color Palette Generator -->
+                    <div class="bg-gray-800/40 p-6 rounded-xl border border-gray-800 hover:border-pink-500/30 transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100 group-hover:text-pink-300 transition-colors mb-2">Color Palette Generator</h3>
+                            <p class="text-gray-400 text-sm mb-4">A tool for creating and exploring color palettes, with options for generating complementary, analogous, and triadic schemes.</p>
+                        </div>
+                        <div>
+                            <ul class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+                                <li>JavaScript</li>
+                                <li>CSS</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 gap-4 flex">
+                            <a target="_blank" rel="noopener noreferrer" href="https://julietasegovia.github.io/Color-Palette-Generator/" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Demo
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/julietasegovia/Color-Palette-Generator" class="inline-block text-center text-pink-300 border border-pink-400 px-6 py-3 rounded hover:bg-pink-400/10 hover:text-pink-200 transition-all duration-300 transform hover:-translate-y-1">
+                                Repo
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-800/60 mt-12 text-center font-mono text-xs text-gray-500">
+            <p>Designed & Built by Julieta Segovia</p>
+        </footer>
     </body>
-</html>        
+</html>
